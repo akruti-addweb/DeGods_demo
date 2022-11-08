@@ -1,0 +1,205 @@
+// General Style
+body {
+
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* COMMON DESIGN START */
+
+a {
+	text-decoration: none;
+	transition: 0.5s all ease;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul li {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+
+	li {
+		list-style-position: inside;
+	}
+}
+
+.section-head {
+
+	.section-header {
+		font-size: 30px;
+		font-weight: 400;
+		color: $white;
+	}
+
+	p {
+		font-size: 14px;
+		font-weight: 400;
+		color: $pera-text;
+
+	}
+}
+
+.heading {
+	color: $white;
+	font-size: 16px;
+	font-weight: 400;
+	width: 100%;
+}
+
+
+:root {
+	--square-size: 15px;
+	--square-gap: 5px;
+	--week-width: calc(var(--square-size) + var(--square-gap));
+}
+
+.months {
+	grid-area: months;
+}
+
+.months {
+	li {
+		color: $pera-text;
+		font-size: 14px;
+
+		@media (max-width:640px) {
+			font-size: 10px;
+		}
+	}
+}
+
+.days {
+	grid-area: days;
+}
+
+.squares {
+	li {
+		cursor: pointer;
+	}
+}
+
+.graph {
+	display: inline-grid;
+	grid-template-areas: "empty months"
+		"days squares";
+	grid-template-columns: auto 1fr;
+
+}
+
+.months {
+	display: grid;
+	grid-template-columns: calc(var(--week-width) * 3) calc(var(--week-width) * 3) calc(var(--week-width) * 4) calc(var(--week-width) * 3) calc(var(--week-width) * 3) calc(var(--week-width) * 3) calc(var(--week-width) * 4) calc(var(--week-width) * 3) calc(var(--week-width) * 3) calc(var(--week-width) * 3) calc(var(--week-width) * 3) calc(var(--week-width) * 1);
+}
+
+.days {
+	display: grid;
+	grid-gap: var(--square-gap);
+	grid-template-rows: repeat(10, var(--square-size));
+}
+
+.squares {
+	display: grid;
+	grid-gap: var(--square-gap);
+	grid-template-rows: repeat(10, var(--square-size));
+	grid-auto-flow: column;
+	grid-auto-columns: var(--square-size);
+}
+
+.squares {
+	grid-area: squares;
+
+}
+
+
+
+.rounded-border {
+	border-radius: 0.25rem;
+}
+
+.bg-ACCBE7 {
+	background-color: $bg-ACCBE7;
+}
+
+.bg-54809F {
+	background-color: $bg-54809F;
+}
+
+.bg-38536C {
+	background-color: $bg-38536C;
+}
+
+.bg-1E2021 {
+	background-color: $bg-1E2021;
+}
+
+.bg-6997C1 {
+	background-color: $bg-6997C1;
+}
+
+.w-36 {
+	width: 144px;
+}
+
+.w-736 {
+	max-width: 750px;
+}
+
+.bg-black {
+	background-color: rgb(15, 15, 15);
+}
+
+
+
+@media screen and (max-width: 1020px) {
+
+	* {
+		--square-size: 12px;
+		--square-gap: 2.3px;
+		--week-width: calc(var(--square-size) + var(--square-gap));
+	}
+}
+
+@media screen and (max-width: 720px) {
+
+	* {
+		--square-size: 8px;
+		--square-gap: 2px;
+		--week-width: calc(var(--square-size) + var(--square-gap));
+	}
+}
+
+@media screen and (max-width: 380px) {
+
+	* {
+		--square-size: 7.5px;
+		--square-gap: 2px;
+		--week-width: calc(var(--square-size) + var(--square-gap));
+	}
+}
+
+
+/* COMMON DESIGN END */
